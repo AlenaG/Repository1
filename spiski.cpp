@@ -6,13 +6,13 @@
 #include <conio.h>
 using namespace std;
 struct List{
-	int id;
+	int id;//интовое поле
 	char * text; //тексовая строка
 	List *next; //указатель на след.элемент
 };
 class Filework{
 public:Filework(): head(NULL), current(NULL) {};
-	   void MainMenu();
+	   void MainMenu(); //прототипы функций
 	   void FunctionCall();
 	   void FileworkMenu();
 	   void EditMenu();
@@ -123,7 +123,7 @@ void Filework::EditMiddle(){
 		getch();//считывает клавишу с клавиатуры
 	}
 }
-void Filework::AddElem(){	
+void Filework::AddElem(){ //функция добавления
 	int id;
 	char * text = new char;
 	char * t = new char;
@@ -158,7 +158,7 @@ void Filework::AddElem(){
 		}
 	}
 }
-void Filework::ShowList(){
+void Filework::ShowList(){ //функция просмотра
 	system("cls");
 	if(!head) cout << "Список пуст.";
 	else{
